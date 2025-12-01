@@ -17,4 +17,11 @@ app.use(express.static("public")) //pdf, image stores in servers for public asse
 app.use(cookieParser())
 
 
-export{ app }
+//routes import
+import userRouter from "./routes/user_routes.js";
+
+//routes declaration
+app.use("/api/v1/users",userRouter)
+//http://localhost:8000/api/v1/user/register
+
+export { app }
